@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  pull_request_target:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run hello world
+        run: |
+          echo "Running PR code"
+          echo $FLAG
+        env:
+          SECRET_TOKEN: ${{ secrets.FLAG }}
